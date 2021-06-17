@@ -6,12 +6,14 @@ const PORT = 3001;
 
 let app = express();
 
+app.set('view engine','pug');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/',(req, res) => {
-  res.set('Content-Type', 'text/plain');
-  res.status(200);
-  res.send('This is the Oz & Bernalophitecus Ro Server\n');
+  res.render('index',{
+    title: 'Ragnarok Server',
+    message: 'Oz & Bernalophitecus Ragnarok Server'
+  })
 })
 
 app.listen(PORT, HOST);
