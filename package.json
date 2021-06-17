@@ -4,6 +4,8 @@
   "description": "Ragnarok server information",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js & echo \"$!\">PID",
+    "stop": "kill -9 $(cat PID)",
     "test": "echo unimplemented"
   },
   "author": "ozodex",
